@@ -1,11 +1,8 @@
 
-<!-- toc orderedList:0 -->
 
 - [Wapt Container](#wapt-container)
 	- [Docker Configuration](#docker-configuration)
 - [TODO](#todo)
-
-<!-- tocstop -->
 
 
 # Wapt Container
