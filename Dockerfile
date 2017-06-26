@@ -1,4 +1,4 @@
-FROM sewatech/apache
+FROM eboraas/apache
 MAINTAINER Aguay
 RUN echo "deb http://wapt.tranquil.it/debian/ ./ " > /etc/apt/sources.list.d/wapt.list
 RUN apt update && apt upgrade -y && apt install -y --force-yes tis-waptserver tis-waptrepo tis-waptsetup libapache2-mod-proxy-html
