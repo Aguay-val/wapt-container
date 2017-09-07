@@ -1,7 +1,9 @@
 FROM eboraas/apache
 MAINTAINER Aguay
 RUN echo "deb http://wapt.tranquil.it/debian/ ./ " > /etc/apt/sources.list.d/wapt.list
-RUN apt update && apt upgrade -y && apt install -y --force-yes tis-waptserver tis-waptrepo tis-waptsetup libapache2-mod-proxy-html
+RUN apt update \
+    && apt -o Acquire::AllowInsecureRepositories=true -o Acquire::AllowDowngradeToInsecureRepositories=true update \
+    && apt install -y --force-yes tis-waptserver tis-waptrepo tis-waptsetup libapache2-mod-proxy-html
 RUN useradd -d /opt/wapt/waptserver waptserver
 RUN chown waptserver  -R /opt/wapt/waptserver
 RUN cp /opt/wapt/waptserver/scripts/waptserver-init /etc/init.d/waptserver
